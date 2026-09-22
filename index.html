@@ -21,19 +21,21 @@
         />
         <p class="brand-name">wiseMatch校园</p>
         <h1 id="page-title">Android 安装包</h1>
-        <p class="version">当前版本正在构建</p>
+        <p class="version">Android 1.0.5</p>
 
-        <div class="download-button download-button--disabled" aria-disabled="true">
+        <a
+          id="download-link"
+          class="download-button"
+          href="https://cdn.wisematch.com.cn/app/android/cloud-apk/wisematch-mini-school/1.0.5-26082109/2c1231c2f29d/wisematch-mini-school-1.0.5-26082109-android-offline-release.apk"
+        >
           <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
             <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" />
           </svg>
-          安装包准备中
-        </div>
+          下载 Android 安装包
+        </a>
 
-        <p class="download-status" role="status">
-          新包完成构建后，这个页面会切换到正式下载地址。
-        </p>
-        <p class="install-note">请等待发布状态更新后再安装，避免使用过期测试包。</p>
+        <p class="download-status" id="download-status" role="status">正在准备下载...</p>
+        <p class="install-note">安装时选择“更新”，校园账号和数据会保留。</p>
 
         <dl class="release-meta">
           <div>
@@ -46,19 +48,38 @@
           </div>
           <div>
             <dt>状态</dt>
-            <dd>构建中</dd>
+            <dd>1.0.5 (26082109)</dd>
           </div>
           <div>
-            <dt>更新时间</dt>
+            <dt>大小</dt>
+            <dd>159.41 MB</dd>
+          </div>
+          <div>
+            <dt>发布时间</dt>
             <dd>2026-09-22</dd>
           </div>
         </dl>
 
         <details class="checksum">
           <summary>发布身份</summary>
-          <code>__UNI__626FD17 · com.wisematch.school</code>
+          <code>2c1231c2f29d14bcc3234f728b5f0b46d57fb82e29872729b9da755d782e319e</code>
         </details>
       </section>
     </main>
+
+    <script>
+      const downloadLink = document.querySelector('#download-link')
+      const downloadStatus = document.querySelector('#download-status')
+      const manualMode = new URLSearchParams(window.location.search).has('manual')
+
+      if (manualMode) {
+        downloadStatus.textContent = '点击按钮即可下载。'
+      } else {
+        window.setTimeout(() => {
+          downloadStatus.textContent = '若未自动下载，请点击上方按钮。'
+          window.location.assign(downloadLink.href)
+        }, 800)
+      }
+    </script>
   </body>
 </html>
