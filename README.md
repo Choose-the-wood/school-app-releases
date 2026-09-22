@@ -6,5 +6,6 @@
 - Source app: `com.wisematch.school`
 - DCloud AppId: `__UNI__626FD17`
 
-当前页面已创建，APK 构建完成后只需更新 `release.json` 和下载地址即可。
+- Latest APK: <https://cdn.wisematch.com.cn/app/android/cloud-apk/wisematch-mini-school/1.0.5-26082109/2c1231c2f29d/wisematch-mini-school-1.0.5-26082109-android-offline-release.apk>
 
+APK 发布到内容寻址 CDN；页面和 `release.json` 保留校园包名与 DCloud AppId。
